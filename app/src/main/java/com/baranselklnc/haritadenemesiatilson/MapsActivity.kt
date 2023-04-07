@@ -53,10 +53,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //casting-> as LOCATİON_SERVİCE değer olarak any döndürecek ama ben onun bir LocationManager olduğunu biliyorum "as" in kullanımı böyledir.
         locationManager=getSystemService(Context.LOCATION_SERVICE) as LocationManager //Context. dedikten sonra erişilebilecek servisler görünecektir
         locationListener= LocationListener { p0 ->
-            //locationListener bir arayüz olduğu için object şekilde tanımlandı.
-            // lokasyon değişiklik olduğunda bu fonksiyon çalışır.
-            /*println(p0.latitude)
-                    println(p0.longitude )*/
+
             mMap.clear() //markerları vs.siler
             val guncelKonum=LatLng(p0.latitude,p0.longitude)
             mMap.addMarker(MarkerOptions().position(guncelKonum).title("Güncel Konumunuz"))
